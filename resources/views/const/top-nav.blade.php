@@ -206,11 +206,11 @@
 
 
                             @foreach($notifications as $not)
-                            <a href="{{route('establishments.edit',  $not['data']['stablishment_id']  )   }}" style="border-bottom: 1px solid #ddd;display: block;">
+                            <a href="{{route('unapproved-establishments')   }}" style="border-bottom: 1px solid #ddd;display: block;">
                                 <div class="col-12 py-2 notifications-scroll " style=" cursor: pointer;">
                                     <h6 style="color: #666">تم اضافة جهة  {{$not['data']['name']}} </h6>
                                     <h6 style="color: #888">رقم الهاتف : {{$not['data']['mobile']}}</h6>
-                                    <h6 style="color: #aaa">تاريخ الاضافة : {{ Carbon\Carbon::parse($not['data']['created_at']['date'])->diffForHumans() }}</h6>
+                                    <h6 style="color: #aaa">تاريخ التسجيل : {{ Carbon\Carbon::parse($not['data']['created_at']['date'])->diffForHumans() }}</h6>
                                 </div>
                             </a>
                             @endforeach

@@ -291,12 +291,6 @@ class EstablishmentsController extends Controller
             $contract->terms()->sync($contractTerms);
 
             $user->syncPermissions($this->permissions);
-            $superAdminRole = Role::where('name', 'super_admin')->first();
-            $adminRole = Role::where('name', 'admin')->first();
-            $superAdmins = $superAdminRole->users;
-            $admins = $adminRole->users;
-            $users = $superAdmins->merge($admins);
-            Notification::send($users, new createNewEstablishments($establishment));
             $details['email'] = $user->email;
             $details['message'] = $approve_template;
             $this->dispatch(new SendEmailJob($details));

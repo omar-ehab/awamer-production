@@ -10,7 +10,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 class createNewEstablishments extends Notification
 {
-    private $name, $mobile, $created_at , $stablishment_id;
+    private $name, $mobile, $created_at , $establishment_id;
     use Queueable;
 
     /**
@@ -20,7 +20,7 @@ class createNewEstablishments extends Notification
      */
     public function __construct(Establishment $establishment)
     {
-        $this->stablishment_id = $establishment['id'];
+        $this->establishment_id = $establishment['id'];
         $this->name = $establishment['name'];
         $this->mobile = $establishment['mobile'];
         $this->created_at = $establishment['created_at'];
@@ -46,7 +46,7 @@ class createNewEstablishments extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'stablishment_id'=>$this->stablishment_id,
+            'establishment_id'=>$this->establishment_id,
             'name' => $this->name,
             'mobile' => $this->mobile,
             'created_at' => $this->created_at
