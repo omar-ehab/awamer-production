@@ -231,7 +231,7 @@ class EstablishmentsController extends Controller
                 'address' => 'required|string',
                 'percentage' => 'required|boolean',
                 'value' => "required|numeric",
-                'logo' => 'mimes:jpeg,jpg,png|required|max:512', // max 512Kb
+                'logo' => 'mimes:jpeg,jpg,png|max:512', // max 512Kb
                 'email' => 'required|email|unique:users',
                 'username' => 'required|string',
                 'password' => 'required|string|min:8',

@@ -68,7 +68,7 @@ class BanksController extends Controller
                 'amount_col'=> 'required|Alpha|max:1|min:1',
                 'donation_date_col'=> 'required|Alpha|max:1|min:1',
                 'bank_account_number_col'=> 'required|Alpha|max:1|min:1',
-                'read_from_row'=>'required|max:1|min:1'
+                'read_from_row'=>'required|numeric'
             ]);
 
             $request->merge(
@@ -131,7 +131,7 @@ class BanksController extends Controller
                 'amount_col'=> 'required|Alpha|max:1|min:1',
                 'donation_date_col'=> 'required|Alpha|max:1|min:1',
                 'bank_account_number_col'=> 'required|Alpha|max:1|min:1',
-                'read_from_row'=>'required|max:1|min:1',
+                'read_from_row'=>'required|numeric'
             ]);
 
             $request->merge(
